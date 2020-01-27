@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: VAR_NAMESPACE
+  name: demo-app
+  labels:
+    app: demo-app
+spec:
+  replicas: 2 
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: demo-app
+        image: radowan/demo-app
+        resources:
+          limits:
+            cpu: 0.5
+            memory: "16777216"
+          requests:
+            cpu: 0.3
+            memory: "16777216"
+        ports:
+        - containerPort: 8080
