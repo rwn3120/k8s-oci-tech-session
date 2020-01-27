@@ -6,6 +6,12 @@ docker build -t radowan/oke-kubectl .
 ```
 
 ## Setup kubectl configuration
+1. Clone this repository or download `setup-kubectl.sh` script:
+```
+curl -sLO https://raw.githubusercontent.com/rwn3120/k8s-oci-tech-session/master/setup-kubectl.sh 
+chmod +x setup-kubectl.sh
+```
+2. Run `setup-kubectl.sh`
 ```
 ./setup-kubectl.sh \
     --region="us-phoenix-1" \

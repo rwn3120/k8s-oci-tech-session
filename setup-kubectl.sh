@@ -81,7 +81,11 @@ if [ "${KEY_FILE}" == "" ]; then
 fi
 
 mkdir -p "oci"
-cp "${KEY_FILE}" "oci/oci_api_key.pem"
+if [[ "${KEY_FILE}" =~ ^https?://[^/]+ ]]; then
+    curl -sL "${KEY_FILE}" -o "oci/oci_api_key.pem"
+else
+    cp "${KEY_FILE}" "oci/oci_api_key.pem"
+fi
 
 cat << EOF > "oci/config"
 [DEFAULT]
