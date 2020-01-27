@@ -1,2 +1,13 @@
-# k8s-oci-tech-session
-k8s@OCI Tech session
+# Kubernetes @OCI/OKE (Tech session)
+
+
+
+
+## Build image
+Run `docker build` command:
+```
+docker build -t <tag> .
+
+# example
+docker build -t radowan/oke-kubectl .
+```
