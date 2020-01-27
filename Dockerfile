@@ -1,5 +1,6 @@
 FROM debian:buster-slim
 
+ENV PATH="/root/bin:${PATH}"
 RUN apt-get update && \
     apt-get -y install \
        vim nano curl \
