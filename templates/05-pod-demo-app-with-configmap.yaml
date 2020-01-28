@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-app-pod
+  namespace: VAR_NAMESPACE
+  labels:
+    author: VAR_NAMESPACE
+spec:
+  containers:
+  - name: demo-app
+    image: radowan/demo-app
+    ports:
+      - containerPort: 8080
+    env:
+      - name: RESPONSE
+        valueFrom:
+          configMapKeyRef:
+            name: demo-app-config-map
+            key: response

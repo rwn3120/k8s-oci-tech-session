@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: VAR_NAMESPACE
-  name: demo-app
+  name: demo-app-deployment
   labels:
-    app: demo-app
+    author: VAR_NAMESPACE
 spec:
   replicas: 2 
   selector:
     matchLabels:
-      app: demo-app
+      app: demo-app-pod
   template:
     metadata:
       labels:
-        app: demo-app
+        app: demo-app-pod
     spec:
       containers:
       - name: demo-app
